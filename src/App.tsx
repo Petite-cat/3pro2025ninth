@@ -27,7 +27,7 @@ function App() {
   for (let k=0; k<S*S; k++){
     const value = X[k];
     if(X[k] !== 0){
-      pieces.push(<Piece i={k} value={value} i={k}></Piece>);
+      pieces.push(<Piece i={k} value={value}></Piece>);
     }
   }
   return(
@@ -41,7 +41,7 @@ function App() {
 
 function click(i:number){
   const copyX = [...X];
-  const dirs = [north(i), south(i), west(i), east(i)];
+  //const dirs = [north(i), south(i), west(i), east(i)];
 
     if(copyX[north(i)] == 0){
       copyX[north(i)] = copyX[i];
