@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import {Button} from '@mui/material/';
+//import {Button} from '@mui/material/';
 
 
 function App() {
  const[X, setX] = useState([0,1,2,3,4,5,6,7,8]);
  const S = 3;
 
- function Piece({value, i}){
+ function Piece({value, i}:{value:number, i:number}){
   const size = 100; 
   const gap = 5;
   const x = gap + (size + gap) *(i%S);
@@ -67,25 +67,25 @@ function idx2pos(i:number){
   return {r:Math.floor(i/3), c:i % 3}; //dictionaryの書き方
 }
 
-function north(i){
+function north(i:number){
   const pos = idx2pos(i);
 
   if(pos.r <= 0) return -1;
   return (pos.r - 1) * 3 + pos.c;
 }
-function south(i){
+function south(i:number){
   const pos = idx2pos(i);
 
   if(pos.r >= 2) return -1;
   return (pos.r +1) * 3 + pos.c;
 }
-function west(i){
+function west(i:number){
   const pos = idx2pos(i);
 
   if(pos.c <= 0) return -1;
   return pos.r * 3 + (pos.c - 1);
 }
-function east(i){
+function east(i:number){
   const pos = idx2pos(i);
 
   if(pos.c >= 2) return -1;
